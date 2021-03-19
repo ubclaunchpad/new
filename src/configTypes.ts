@@ -94,6 +94,27 @@ export type Project = {
   };
 }
 
+export enum EventType {
+  TechTalk = 'Tech Talk'
+}
+
+/**
+ * Describes a Launch Pad event.
+ */
+export type ClubEvent = {
+  type: EventType;
+  title: string;
+  /**
+   * The event date should conform to the following format:
+   *  `Weekday, Month Date at Time Timezone`
+   *  e.g. `Saturday, March 20 at 7:00 PM PST
+   */
+  date: string;
+  blurb: string;
+  description: string;
+  rsvpLink: string;
+}
+
 /**
  * Describes a Launch Pad position (e.g. 'Developer', 'Designer')
  */

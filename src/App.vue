@@ -31,14 +31,21 @@
       <Highlights />
     </Section>
 
-    <Section :section-id="3">
+    <Section
+      :section-id="3"
+      size="medium"
+    >
+      <Events :events="club.currentEvents" />
+    </Section>
+
+    <Section :section-id="4">
       <Teams
         :member-count="club.memberCount"
         :projects="club.currentProjects"
       />
     </Section>
 
-    <Section :section-id="4">
+    <Section :section-id="5">
       <Projects
         :github="club.socials.github"
         :projects="club.featuredProjects"
@@ -46,7 +53,7 @@
     </Section>
 
     <Section
-      :section-id="5"
+      :section-id="6"
       size="large"
     >
       <Resources
@@ -56,7 +63,7 @@
 
     <Section
       v-if="recruitment.applicationsOpen"
-      :section-id="6"
+      :section-id="7"
       size="medium"
     >
       <Join
@@ -66,7 +73,7 @@
 
     <!-- section-id depends on if join section exists or not -->
     <Section
-      :section-id="recruitment.applicationsOpen ? 7 : 6"
+      :section-id="recruitment.applicationsOpen ? 8 : 7"
       size="medium"
     >
       <Sponsors
@@ -97,6 +104,7 @@ import Section from '@/components/Section.vue';
 import Feature from '@/sections/Feature.vue';
 import About from '@/sections/About.vue';
 import Highlights from '@/sections/Highlights.vue';
+import Events from '@/sections/Events.vue';
 import Teams from '@/sections/Teams.vue';
 import Projects from '@/sections/Projects.vue';
 import Resources from '@/sections/Resources.vue';
@@ -114,6 +122,7 @@ export default Vue.extend({
     Feature,
     About,
     Highlights,
+    Events,
     Teams,
     Projects,
     Resources,

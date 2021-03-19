@@ -9,7 +9,7 @@
  * @packageDocumentation
  */
 
-import { Project, ClubPosition, ClubSponsor, ClubSocials } from './configTypes';
+import { Project, ClubPosition, ClubSponsor, ClubSocials, ClubEvent, EventType } from './configTypes';
 
 /* eslint-disable max-len */
 
@@ -64,6 +64,7 @@ export const recruitmentConfig: {
 export const clubConfig: {
   memberCount: number;
   currentProjects: Project[];
+  currentEvents: ClubEvent[];
   featuredProjects: Project[];
   socials: ClubSocials;
 } = {
@@ -192,6 +193,22 @@ export const clubConfig: {
         repository: 'https://github.com/ubclaunchpad/accessyouth-api',
         writeup: 'https://github.com/ubclaunchpad/accessyouth-api#access-youth-mobile---our-experience-building-this',
       },
+    },
+  ],
+
+  /**
+   * Show upcoming Launch Pad events.
+   * 
+   * Each element must satisfy [[`ClubEvent`]].
+   */
+  currentEvents: [
+    {
+      type: EventType.TechTalk,
+      title: 'Continuous Integration and Deployment',
+      date: 'Saturday, March 20 at 7:00PM PST',
+      blurb: `Want to learn more about what continuous integration and deployment is and how it works?`,
+      description: `We're hosting a tech talk that will cover what is CI/CD, why it's essential in Software Engineering, and how to get started building workflows in GitHub Actions. You will learn to build simple workflows, setup containers for testing, and build workflows that automatically deploy your application.`,
+      rsvpLink: `https://forms.gle/EPKEmduYihneefdo7`,
     },
   ],
 
